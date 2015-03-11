@@ -4,14 +4,14 @@
 
 Hello Everybody,
 
-my name is Simone Mosciatti, I am italian and I am going to introduce Clojure and functional programming.
+my name is Simone Mosciatti, I am Italian and I am going to introduce Clojure and functional programming.
 
 I do have a weird accent, so if you cannot understand what I am saying please just raise your hand.
 
 Let me ask you first:
 
 *Who know clojure ?* few hands expected
-*Who know functional programming ?* slighlty more hands
+*Who know functional programming ?* slightly more hands
 
 Thank you.
 
@@ -19,11 +19,11 @@ Thank you.
 
 Clojure is a Lisp dialect that run on the JVM.
 
-Is definitely more than fast enought for most application but it is extremelly slow in startup time.
+Is definitely more than fast enough for most application but it is extremely slow in startup time.
 
-Clojure is a very productive languange and it is used for a lot of data intensive application and to run web application.
+Clojure is a very productive language and it is used for a lot of data intensive application and to run web application.
 
-Actually is a good fit for most task, I won't write a microcontroller in clojure though.
+Actually is a good fit for most task, I won't write a micro controller in clojure though.
 
 ## What clojure looks like ?
 
@@ -37,7 +37,7 @@ Actually is a good fit for most task, I won't write a microcontroller in clojure
 ;; (2 4 6 8 10 12 14 16 18 20) this is a comment
 ```
 
-Ok, it is different from what you usually see but it is an extremelly simple concept.
+Ok, it is different from what you usually see but it is an extremely simple concept.
 
 The first thing after the bracket is a function, all the other things are arguments for such function, of course, argument to a function can be other function call.
 
@@ -47,26 +47,26 @@ That it's.
 
 Other than in the examples usually you do not define much variables.
 
-If in OOP or procedural programming languange we define variable and then we modify such variable, all this do not happen in clojure, or at least is not idiomatic...
+If in OOP or procedural programming language we define variable and then we modify such variable, all this do not happen in clojure, or at least is not idiomatic...
 
 We never modify variable in Clojure.
 
 ### How can we make any useful thing without modify variable ?
 
-In clojure, similarly to other functiona languanges, you usually create a funnel of trasformations, you plug your input in, and you get your output out.
+In clojure, similarly to other functional languages, you usually create a funnel of transformations, you plug your input in, and you get your output out.
 
-This "funnel of trasformations" is the composition of several functions.
+This "funnel of transformations" is the composition of several functions.
 
 In idiomatic clojure any function is a pure function, given the same input you will get the same output, any single time, and the function do not modify the environment.
 
-This is extremelly powerfull:
+This is extremely power full:
 
 ``` clojure
 (def my-self
     {:name "Simone Mosciatti"
      :age 20
      :work "unemployed"
-     :girlfriend "Extremelly far from HERE :-("})
+     :girlfriend "Extremely far from HERE :-("})
 
 (defn split-name [{:keys [name] :as person}]
 	(let [[name surname] (clojure.string/split name #" ")]
@@ -84,18 +84,18 @@ This is extremelly powerfull:
 (defn perfect [user]
 	(birthday (find-job (meet-girlfriend (split-name user)))))
 (defn more-idiomatic-perfect [person]
-	(-> person split-name birtday find-job meet-girlfriend))
+	(-> person split-name birthday find-job meet-girlfriend))
 (def perfect-perfect (comp split-name birthday find-job meet-girlfriend))
 ```
 
 How it this approach useful ?
 
-Any function can be tested in isolation, test is extremelly simple, and atomic.
+Any function can be tested in isolation, test is extremely simple, and atomic.
 
 This approach scale, even with thousand of LOC we are still using pure function that are trivial to test.
 
 Small recap: Clojure do not modify variable, it modify, and combine function in such a way to create a funnel, where you plug in your input value and where you get out your output value.
 
-Function in idiomatic clojure are simple, small, and pure, are extremelly easy to test (maybe even to easy).
+Function in idiomatic clojure are simple, small, and pure, are extremely easy to test (maybe even to easy).
 
 
