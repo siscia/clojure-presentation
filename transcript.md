@@ -98,3 +98,4 @@ Small recap: Clojure do not modify variable, it modify, and combine function in 
 
 Function in idiomatic clojure are simple, small, and pure, are extremelly easy to test (maybe even to easy).
 
+
